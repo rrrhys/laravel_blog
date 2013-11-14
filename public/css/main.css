@@ -1,0 +1,26 @@
+.login_box {
+	
+}
+
+label {
+	width: 180px;
+	margin-top: 10px;
+	text-align: left;
+	display:block;
+}
+input[type=text],input[type=password]{
+	width: 250px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+input[type=submit] {
+	margin-top: 10px;
+	margin-left: 70px;
+	width: 100px;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+}
+h1 {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #eee;
+}
