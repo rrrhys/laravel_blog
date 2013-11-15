@@ -1,6 +1,6 @@
 <?php
 
-class SessionController extends \BaseController {
+class PostController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -20,20 +20,7 @@ class SessionController extends \BaseController {
 	public function create()
 	{
 		//
-		$email = Input::get('email');
-		$password = Input::get('password');
-		if(Auth::attempt(array(
-			'email'=>$email, 
-			'password'=>$password))){
-			return Redirect::to('/')->with('success','Login successful!');
-		}else{
-			return Redirect::to('/')->with('error','Login failed.');
-		}
-
-	}
-	public function destroy(){
-		Auth::logout();
-		return Redirect::to('/')->with('success','You have been logged out.');
+		return View::make('posts.create', $this->base_data());
 	}
 
 	/**
@@ -44,6 +31,11 @@ class SessionController extends \BaseController {
 	public function store()
 	{
 		//
+
+		$post = Post::create(Input::all());
+		Auth::user()->posts()->save($post);
+
+		return Redirect::route('post.show',array($post->id))->with('success','Post <i>'.$post->post_title.'</i> saved!');
 	}
 
 	/**
@@ -55,6 +47,8 @@ class SessionController extends \BaseController {
 	public function show($id)
 	{
 		//
+		$post = Post::find((int)$id);
+		return View::make('posts.show', $this->base_data(array('post'=>$post)));
 	}
 
 	/**
@@ -66,6 +60,8 @@ class SessionController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		$post = Post::find((int)$id);
+		return View::make('posts.edit', $this->base_data(array('post'=>$post)));
 	}
 
 	/**
@@ -75,6 +71,17 @@ class SessionController extends \BaseController {
 	 * @return Response
 	 */
 	public function update($id)
+	{
+		//
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
 	{
 		//
 	}

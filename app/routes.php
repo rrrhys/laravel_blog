@@ -11,16 +11,22 @@
 |
 */
 
+/*
 Route::get('/', function()
 {
 	return View::make('hello');
-});
+});*/
+
+Route::get('/','StaticController@index');
 
 Route::get('register','UserController@create');
 Route::get('users', 'UserController@getIndex');
 Route::post('signin','SessionController@create');
 Route::get('signout','SessionController@destroy');
 Route::post('register','UserController@store');
+
+Route::resource('post','PostController');
+
 //Route::get('users',function(){
 //	return 'Users!';
 //});

@@ -1,6 +1,6 @@
 <?php
 
-class SessionController extends \BaseController {
+class StaticController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,6 +10,8 @@ class SessionController extends \BaseController {
 	public function index()
 	{
 		//
+		$posts = Post::all();
+		return View::make("static.index", $this->base_data(array('posts'=>$posts)));
 	}
 
 	/**
@@ -20,20 +22,6 @@ class SessionController extends \BaseController {
 	public function create()
 	{
 		//
-		$email = Input::get('email');
-		$password = Input::get('password');
-		if(Auth::attempt(array(
-			'email'=>$email, 
-			'password'=>$password))){
-			return Redirect::to('/')->with('success','Login successful!');
-		}else{
-			return Redirect::to('/')->with('error','Login failed.');
-		}
-
-	}
-	public function destroy(){
-		Auth::logout();
-		return Redirect::to('/')->with('success','You have been logged out.');
 	}
 
 	/**
@@ -75,6 +63,17 @@ class SessionController extends \BaseController {
 	 * @return Response
 	 */
 	public function update($id)
+	{
+		//
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
 	{
 		//
 	}

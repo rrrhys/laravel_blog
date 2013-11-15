@@ -11,7 +11,7 @@
 <body>
 
 	<div class="navbar navbar-default">
-		<a class="navbar-brand">Laravel Blog</a>
+		<a class="navbar-brand" href="/">Laravel Blog</a>
 		<ul class="nav navbar-nav">
 
 			@if (Auth::check())
@@ -23,7 +23,9 @@
 						<li>
 							{{link_to_action('SessionController@destroy','Sign Out')}}
 						</li>
+
 					</ul>
+					{{HTML::nav_link('post/create','Create')}}
 				</li>
 
 			@else
@@ -52,6 +54,17 @@
 		</ul>
 	</div>
 	<div class="container">
+@if ($success)
+<div class='alert alert-success'>
+	{{$success}}
+</div>
+@endif
+@if ($error)
+<div class='alert alert-error'>
+	{{$success}}
+</div>
+@endif
+		
 		<h1>@yield('title') <small>Laravel Quickstart</small></h1>
 		@yield('content')
 	</div>
