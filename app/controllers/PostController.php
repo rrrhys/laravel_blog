@@ -20,6 +20,8 @@ class PostController extends \BaseController {
 	public function create()
 	{
 		//
+		if(!Auth::check()) return Redirect::to('/');
+		
 		return View::make('posts.create', $this->base_data());
 	}
 
@@ -31,6 +33,7 @@ class PostController extends \BaseController {
 	public function store()
 	{
 		//
+		if(!Auth::check()) return Redirect::to('/');
 
 		$post = Post::create(Input::all());
 		Auth::user()->posts()->save($post);
@@ -60,6 +63,8 @@ class PostController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		if(!Auth::check()) return Redirect::to('/');
+
 		$post = Post::find((int)$id);
 		return View::make('posts.edit', $this->base_data(array('post'=>$post)));
 	}
@@ -73,6 +78,13 @@ class PostController extends \BaseController {
 	public function update($id)
 	{
 		//
+		if(!Auth::check()) return Redirect::to('/');
+
+		$post = Post::find((int)$id);
+		$post->update(Input::all());
+
+		return Redirect::route('post.show',array($post->id))->with('success','Post <i>'.$post->post_title.'</i> saved!');
+
 	}
 
 	/**
