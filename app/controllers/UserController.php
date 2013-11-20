@@ -10,6 +10,13 @@ class UserController extends BaseController {
 		return View::make('users/create', $this->base_data());
 	}
 	public function store(){
+		$disable_outside_registrations = true;
+
+		$email =Input::get('email')
+		if($disable_outside_registrations && $email != "rrrhys@gmail.com"){
+			return Redirect::to('/')->with('error','Registrations are diabled.');
+		}
+		$user_exists = User::where('email', '=', $email)->count > 0;
 		$user = new User;
 		$user->email = Input::get('email');
 		$user->password = Hash::make(Input::get('password'));

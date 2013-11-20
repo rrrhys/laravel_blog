@@ -60,8 +60,8 @@
 </div>
 @endif
 @if ($error)
-<div class='alert alert-error'>
-	{{$success}}
+<div class='alert alert-danger'>
+	{{$error}}
 </div>
 @endif
 		

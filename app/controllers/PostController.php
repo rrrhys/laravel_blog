@@ -51,6 +51,9 @@ class PostController extends \BaseController {
 	{
 		//
 		$post = Post::find((int)$id);
+		if(!$post){
+			return Redirect::to('/')->with('error',"That post doesn't exist");
+		}
 		return View::make('posts.show', $this->base_data(array('post'=>$post)));
 	}
 
