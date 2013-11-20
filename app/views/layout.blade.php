@@ -6,12 +6,12 @@
 	{{HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')}}
 	{{HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css')}}
 
-	{{HTML::style('css/main.css')}}
+	{{HTML::style('css/main.css?v=2')}}
 </head>
 <body>
 
 	<div class="navbar navbar-default">
-		<a class="navbar-brand" href="/">Laravel Blog</a>
+		<a class="navbar-brand" href="/">Rrrhys Blog</a>
 		<ul class="nav navbar-nav">
 
 			@if (Auth::check())
@@ -65,7 +65,7 @@
 </div>
 @endif
 		
-		<h1>@yield('title') <small>Laravel Quickstart</small></h1>
+		<h1>@yield('title') <small>rrrhys.com</small></h1>
 		@yield('content')
 	</div>
 
