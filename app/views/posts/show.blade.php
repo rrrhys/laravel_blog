@@ -4,7 +4,7 @@
 {{$post->post_title}}
 @stop
 @section('content')
-{{$post->post_body}}
+{{Markdown::string($post->post_body)}}
 <br>
 <small>Posted at {{$post->updated_at}} 
 
