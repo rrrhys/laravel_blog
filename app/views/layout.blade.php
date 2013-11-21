@@ -43,7 +43,7 @@
 <br>
 {{Form::label('password')}}
 {{Form::password('password')}}
-{{Form::submit('Click')}}
+{{Form::submit('Sign In', array('id'=>'signin_button'))}}
 		{{Form::close()}}
 	</div>
 

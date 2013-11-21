@@ -12,9 +12,9 @@ class UserController extends BaseController {
 	public function store(){
 		$disable_outside_registrations = true;
 
-		$email =Input::get('email')
+		$email =Input::get('email');
 		if($disable_outside_registrations && $email != "rrrhys@gmail.com"){
-			return Redirect::to('/')->with('error','Registrations are diabled.');
+			return Redirect::to('/')->with('error','Registrations are disabled.');
 		}
 		$user_exists = User::where('email', '=', $email)->count > 0;
 		$user = new User;
