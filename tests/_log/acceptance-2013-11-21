@@ -1,0 +1,25 @@
+[2013-11-21 01:51:04] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-11-21 01:51:04] WelcomeCept.php.INFO: see "Home" [] []
+[2013-11-21 01:51:04] WelcomeCept.php.ALERT: Failed asserting that 
+-->  <bold>/myapp/</bold><info>404 Not Found 404 Not Found nginx/1.4.1</info>
+--> contains "home". [] []
+[2013-11-21 01:51:04] WelcomeCept.php.INFO: # FAILED # [] []
+[2013-11-21 01:51:04] WelcomeCept.php.INFO: PASSED [] []
+[2013-11-21 01:52:05] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-11-21 01:52:08] WelcomeCept.php.INFO: see "Home" [] []
+[2013-11-21 01:52:08] WelcomeCept.php.ALERT: Failed asserting that 
+-->  <bold>/</bold><info>Rrrhys Blog 		 					 						Sign in 					 	 		EmailPassword	 				 				Register 						 		 	 		 		 rrrhys.com 		zz.  Recent posts: Laravel Resources - default routes 2013-11-20 00:19:07 Starting (and killing) Rails Server from Cloud 9 Terminal 2013-11-20 00:19:07 using has_secure_password 2013-10</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "home". [] []
+[2013-11-21 01:52:08] WelcomeCept.php.INFO: # FAILED # [] []
+[2013-11-21 01:52:08] WelcomeCept.php.INFO: PASSED [] []
+[2013-11-21 02:38:43] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-11-21 02:38:44] WelcomeCept.php.INFO: see "Home" [] []
+[2013-11-21 02:38:44] WelcomeCept.php.INFO: PASSED [] []
+[2013-11-21 02:41:38] WelcomeCept.php.INFO: am on page "/" [] []
+[2013-11-21 02:41:40] WelcomeCept.php.INFO: see "Home" [] []
+[2013-11-21 02:41:40] WelcomeCept.php.INFO: am on page "/signin" [] []
+[2013-11-21 02:41:40] WelcomeCept.php.INFO: fill field "signin[email]","rrrhys@gmail.com" [] []
+[2013-11-21 02:41:40] WelcomeCept.php.ALERT: Field by name, label, CSS or XPath 'signin[email]' was not found on page. [] []
+[2013-11-21 02:41:40] WelcomeCept.php.INFO: # FAILED # [] []
+[2013-11-21 02:41:40] WelcomeCept.php.INFO: PASSED [] []

@@ -4,8 +4,8 @@
 
 @stop
 @section('content')
-<h2>zz.</h2>
-
+<h2>Home</h2>
+<p>Hey
 <h2>Recent posts:</h2>
 <ul>
 @foreach($posts as $post)

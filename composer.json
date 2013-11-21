@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.0.*",
-		"vtalbot/markdown": "1.*"
+		"vtalbot/markdown": "1.*",
+		"codeception/codeception": "*"
 	},
 	"autoload": {
 		"classmap": [
